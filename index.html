@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gabi sa Mendez</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&family=Anton&family=Archivo:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="top"></div>
+<div class="hud" id="h0"></div><div class="hud" id="h1"></div>
+<div class="bag" id="b0"></div><div class="bag" id="b1"></div>
+
+<!-- Screen 1: main menu -->
+<div class="ov scr on" id="menu"><div class="panel">
+  <div class="kick">A PHILIPPINE FOLKLORE SURVIVAL GAME</div>
+  <h1 class="ttl"><span class="a">GABI SA</span><span class="b">MENDEZ</span></h1>
+  <p>Survive five nights in a village haunted by creatures of Philippine folklore.</p>
+  <button class="mb pri" id="bStart">Start game</button>
+  <button class="mb" id="bSet">Settings &amp; controls</button>
+  <button class="mb" id="bExit">Exit game</button>
+</div></div>
+
+<!-- Mode select (after Start Game) -->
+<div class="ov scr" id="modes"><div class="panel">
+  <h2 style="color:var(--gold);margin:0">CHOOSE YOUR MODE</h2>
+  <button class="mb pri" id="p1">Single player</button>
+  <button class="mb" id="p2">Two-player co-op</button>
+  <button class="mb" id="bk1">Back to menu</button>
+</div></div>
+
+<!-- Screen 2: settings and controls -->
+<div class="ov scr" id="settings"><div class="panel wide">
+  <h2 style="color:var(--gold);margin:0">SETTINGS &amp; CONTROLS</h2>
+  <div class="cols">
+    <div class="ctl"><h3>Single Player</h3>A / D - Move left and right<br>W / S - Move up and down<br>T - Shoot<br>Y - Melee attack<br>U - Reload<br>I - Use healing / special item<br>O - Open / close backpack<br>B - Throw Bawang<br>1-5 - Select quick inventory slot<br><small>In the backpack: W / S choose, T equips. Esc pauses.</small></div>
+    <div class="ctl"><h3>Two Player Co-op</h3><b>Player 1</b>A / D / W / S - Move<br>T - Shoot<br>Y - Melee<br>U - Reload<br>I - Heal / special item<br>O - Backpack<br>B - Throw Bawang<b>Player 2</b>Arrow Keys - Move<br>Numpad 1 - Shoot<br>Numpad 2 - Melee<br>Numpad 4 - Reload<br>Numpad 5 - Heal / special item<br>Numpad 6 - Backpack<br>Numpad 7 - Throw Bawang<br>Numpad 8 / 9 - Switch quick slot<br>E - Hold to revive teammate<b>No numpad? Use these instead</b>. (period) - Shoot<br>/ - Melee<br>, (comma) - Reload<br>Right Shift - Heal / special item<br>Enter - Backpack<br>M - Throw Bawang<br>; and ' - Switch quick slot<br><small>Player 2 also gets wider aim assist.</small></div>
+  </div>
+  <h3 style="margin-top:10px">Audio Settings</h3>
+  <label for="sfxR">Sound Effects</label><input type="range" id="sfxR" min="0" max="100" value="25">
+  <label for="musR">Music</label><input type="range" id="musR" min="0" max="100" value="70">
+  <button class="mb pri" id="bk2" style="margin-top:10px">Back to menu</button>
+</div></div>
+
+<!-- Screen 3: exit game -->
+<div class="ov" id="exit"><div class="dlg">
+  <h3>Gabi sa Mendez says</h3><p>Do you want to leave Gabi sa Mendez?</p>
+  <div class="btns"><button class="ok" id="xYes">OK</button><button class="no" id="xNo">Cancel</button></div>
+</div></div>
+<div class="ov scr" id="bye"><div class="panel">
+  <h2 style="color:var(--gold);margin:0">YOU LEFT THE VILLAGE</h2>
+  <p>Thanks for playing. You can close this tab now.</p>
+  <button class="mb pri" id="bk3">Return to menu</button>
+</div></div>
+<div class="ov" id="banner"><h1 id="bt"></h1><p id="bs"></p></div>
+<div class="ov" id="pause"><h2>Paused</h2><button id="resume">Resume</button><button id="tomenu">Main menu</button></div>
+<div class="ov" id="shop"><h2>Rest and shop</h2><p id="shopmsg"></p><div id="shopbody"></div><button id="next">Begin next night</button></div>
+<div class="ov" id="over"><h1>You fell</h1><p id="overt"></p><button id="retry">Try again</button><button id="tomenu2">Main menu</button></div>
+<div class="ov" id="win"><h1>Dawn breaks</h1><p>All five nights survived. Mendez is safe.</p><button id="tomenu3">Main menu</button></div>
+
+<script src="game.js"></script>
+</body>
+</html>

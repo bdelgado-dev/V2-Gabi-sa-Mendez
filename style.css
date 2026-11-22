@@ -1,0 +1,47 @@
+/* Gabi sa Mendez - styles: layout, HUD, menus, inventory */
+:root{--black:#100406;--burg:#391018;--orange:#E24B16;--gold:#F9B642;--blue:#082739;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--black);color:#f3e3d0;font-family:Archivo,Arial,sans-serif;overflow:hidden}
+canvas{position:fixed;inset:0;width:100%;height:100%;image-rendering:pixelated}
+.ov{position:fixed;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:rgba(16,4,6,.9);text-align:center;z-index:9;padding:20px;overflow:auto}
+.ov.on{display:flex}
+h1{font:400 clamp(44px,9vw,96px)/1 Anton,Impact,sans-serif;letter-spacing:.02em;margin:0;color:var(--gold);text-shadow:4px 4px 0 var(--orange)}
+h2{margin:0;color:var(--gold);font:400 36px/1 Anton,Impact,sans-serif;letter-spacing:.03em}
+p{margin:0;max-width:640px;line-height:1.4}
+small{opacity:.8}
+button{font:inherit;font-size:20px;padding:10px 22px;background:var(--burg);color:var(--gold);border:3px solid var(--orange);cursor:pointer}
+button:hover,button:focus-visible{background:var(--orange);color:var(--black);outline:none}
+.row{display:flex;gap:10px;align-items:center;justify-content:space-between;width:min(760px,92vw);padding:8px;border:2px solid var(--burg);background:var(--blue);text-align:left}
+.row button{font-size:15px;padding:6px 10px}
+#top{position:fixed;top:calc(8px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);z-index:3;background:rgba(57,16,24,.85);border:3px solid var(--orange);padding:6px 16px;display:none;white-space:nowrap}
+.hud{position:fixed;bottom:calc(10px + env(safe-area-inset-bottom,0px));width:290px;z-index:3;background:rgba(57,16,24,.88);border:3px solid var(--orange);padding:8px;display:none}
+#h0{left:10px}#h1{right:10px}
+.slots,.grid{display:flex;gap:4px;flex-wrap:wrap}
+.slot{width:46px;height:46px;border:3px solid #6a2a30;background:var(--black);font-size:24px;display:flex;align-items:center;justify-content:center;position:relative}
+.slot.sel{border-color:var(--gold);box-shadow:0 0 8px var(--gold)}
+.slot b{position:absolute;right:2px;bottom:-2px;font-size:12px;color:var(--gold)}
+.slot i{position:absolute;left:3px;top:0;font-size:10px;font-style:normal;opacity:.6}
+.bar{height:8px;background:#000;margin:4px 0}.bar i{display:block;height:100%}
+.bag{position:fixed;bottom:calc(190px + env(safe-area-inset-bottom,0px));width:290px;z-index:4;background:rgba(8,39,57,.95);border:3px solid var(--gold);padding:8px;display:none;font-size:14px}
+#b0{left:10px}#b1{right:10px}
+.scr{background:radial-gradient(ellipse at 50% 35%,#082739 0,#100406 72%)}
+.panel{background:#100406;border:1px solid #3a1c1c;border-left:6px solid var(--orange);padding:36px 44px;width:min(710px,94vw);box-shadow:0 20px 60px rgba(0,0,0,.6);display:flex;flex-direction:column;gap:12px;text-align:center;font-family:Archivo,Arial,sans-serif}
+.panel.wide{width:min(750px,94vw);text-align:left}
+.kick{color:var(--orange);font-weight:800;font-size:13px;letter-spacing:.3em}
+.ttl{font:400 clamp(56px,10vw,100px)/.92 Anton,Impact,sans-serif;margin:0}
+.ttl span{display:block}.ttl .a{color:var(--gold)}.ttl .b{color:var(--orange)}
+.panel h2{font:400 clamp(30px,5vw,44px)/1 Anton,Impact,sans-serif}
+.panel h3{margin:0 0 8px;color:var(--orange);font-size:20px}
+.panel p{color:#d9b8b0;font-size:15px;max-width:none}
+.mb{font:800 16px Archivo,Arial,sans-serif;letter-spacing:.15em;text-transform:uppercase;padding:18px;width:100%;background:var(--burg);color:#fff;border:1px solid #6a2a30}
+.mb.pri{background:var(--orange);color:var(--black);border-color:var(--gold)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.ctl{font-size:13px;line-height:1.7;color:#e6d2cc}.ctl b{display:block;color:#fff;margin-top:6px}
+.panel label{color:var(--gold);font-size:14px;margin-top:6px}
+input[type=range]{width:100%;accent-color:var(--orange)}
+#exit{z-index:20;background:rgba(0,0,0,.65);justify-content:flex-start;padding-top:12px}
+.dlg{background:#1d1b14;border:1px solid #3a372a;border-radius:16px;padding:22px 26px;width:min(560px,94vw);text-align:left;font-family:Archivo,Arial,sans-serif}
+.dlg h3{margin:0 0 14px;font-size:20px;color:#fff}.dlg p{margin-bottom:18px;color:#eee}
+.dlg .btns{display:flex;justify-content:flex-end;gap:10px}
+.dlg button{border-radius:999px;border:0;font:700 16px Archivo,Arial,sans-serif;padding:12px 28px}
+.dlg .ok{background:#d9c76a;color:#1d1b14}.dlg .no{background:#4a4210;color:#fff}
